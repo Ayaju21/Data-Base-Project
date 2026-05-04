@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="606.0" prefWidth="957.0" stylesheets="@../CSS/Styles.CSS" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.db.ProductController">
+   <children>
+      <VBox layoutX="22.0" layoutY="85.0" prefHeight="372.0" prefWidth="222.0" spacing="5.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Product PROD" />
+            <DatePicker fx:id="product_PROD" promptText="Enter RROD" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Product EXP" />
+            <DatePicker fx:id="product_EXP" promptText="Enter EXP" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Produce place" />
+            <TextField fx:id="product_Place" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier company" />
+            <TextField fx:id="supplier_company" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type" />
+            <TextField fx:id="type" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Brand" />
+            <TextField fx:id="brand" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weight" />
+            <TextField fx:id="weight" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <TableView fx:id="talble" layoutX="256.0" layoutY="95.0" onMouseClicked="#getData" prefHeight="376.0" prefWidth="650.0">
+        <columns>
+          <TableColumn fx:id="ProId" prefWidth="75.0" text="Product ID" />
+          <TableColumn fx:id="proPRODDate" prefWidth="96.800048828125" text="Product PROD" />
+            <TableColumn fx:id="proEXPDate" prefWidth="91.19998168945312" text="Product EXP" />
+            <TableColumn fx:id="proProduce_Place" prefWidth="102.4000244140625" text="Produce place" />
+            <TableColumn fx:id="proSupplier_Company" prefWidth="106.4000244140625" text="Supplier company" />
+            <TableColumn fx:id="proType" prefWidth="47.99993896484375" text="Type" />
+            <TableColumn fx:id="proBrand" prefWidth="61.60009765625" text="Brand" />
+            <TableColumn fx:id="proWeight" prefWidth="61.60009765625" text="Weight" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="414.0" layoutY="24.0" text="CRUD Product">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ButtonBar layoutX="244.0" layoutY="504.0" prefHeight="40.0" prefWidth="200.0">
+         <buttons>
+          <Button fx:id="btSave" alignment="CENTER" mnemonicParsing="false" onAction="#createProduct" text="Insert " />
+            <Button fx:id="btDelete" mnemonicParsing="false" onAction="#deleteProduct" text="Delete" />
+            <Button fx:id="btUpdate" minHeight="38.0" mnemonicParsing="false" onAction="#updateProduct" prefHeight="38.0" prefWidth="120.0" text="Update" />
+            <Button fx:id="btClear" mnemonicParsing="false" onAction="#clearField" text="Clear" />
+         </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>

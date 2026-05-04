@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="365.0" prefWidth="708.0" stylesheets="@../CSS/Styles.CSS" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.db.PaymentController">
+   <children>
+      <VBox fx:id="PanDate" layoutX="26.0" layoutY="97.0" prefHeight="158.0" prefWidth="222.0" spacing="5.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Date" />
+            <DatePicker fx:id="PayDate" promptText="Enter Date" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Amount " />
+            <TextField fx:id="PayAmount" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Type" />
+            <TextField fx:id="PayType" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <TableView fx:id="talble" layoutX="292.0" layoutY="97.0" onMouseClicked="#getData" prefHeight="151.0" prefWidth="387.0">
+         <columns>
+          <TableColumn fx:id="payId" prefWidth="80.79998779296875" text="Payment ID " />
+          <TableColumn fx:id="payDate" prefWidth="96.7999267578125" text="Payment Date" />
+            <TableColumn fx:id="payAmount" prefWidth="112.79998779296875" text="Payment Amount " />
+            <TableColumn fx:id="payType" prefWidth="97.5999755859375" text="Payment Type" />
+         </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="263.0" layoutY="29.0" text="CRUD Payment">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ButtonBar layoutX="78.0" layoutY="288.0" prefHeight="40.0" prefWidth="200.0">
+         <buttons>
+          <Button fx:id="btSave" alignment="CENTER" mnemonicParsing="false" onAction="#createPayment" text="Insert " />
+            <Button fx:id="btDelete" mnemonicParsing="false" onAction="#deletePayment" text="Delete" />
+            <Button fx:id="btUpdate" minHeight="38.0" mnemonicParsing="false" onAction="#updatePayment" prefHeight="38.0" prefWidth="120.0" text="Update" />
+            <Button fx:id="btClear" mnemonicParsing="false" onAction="#clearField" text="Clear" />
+         </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>
